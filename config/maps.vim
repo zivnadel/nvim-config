@@ -36,11 +36,11 @@ imap <expr> <C-Q> len(getbufinfo({'buflisted':1})) == 1 ? '<esc>:q<cr>' : '<esc>
 " force exit
 
 " Control-C Copy in visual mode
-vmap <C-C> y
+vnoremap <C-C> y
 
 " Control-V Paste in insert and command mode
-imap <C-V> <esc>pa
-cmap <C-V> <C-r>0
+inoremap <C-V> <esc>pa
+cnoremap <C-V> <C-r>0
 
 " make delete truly delete and not copy
 nnoremap x "_x
@@ -117,7 +117,11 @@ nnoremap zz gT
 nnoremap mm gt
 
 " moving lines up and down
-nnoremap <A-Up> :m-2<CR>
-nnoremap <A-Down> :m+<CR>
-inoremap <A-Up> <Esc>:m-2<CR>
-inoremap <A-Down> <Esc>:m+<CR>
+nmap <A-Up> :m-2<CR>
+nmap <A-Down> :m+<CR>
+imap <A-Up> <Esc>:m-2<CR>
+imap <A-Down> <Esc>:m+<CR>
+
+" moving blocks up and dows
+vmap <A-Up> [egv
+vmap <A-Down> ]egv

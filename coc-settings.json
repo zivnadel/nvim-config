@@ -6,7 +6,7 @@
   "eslint.enable": true,
   "eslint.autoFixOnSave": true,
 
-  // Run prettier (and others)
+  // Format on save (with prettier)
   "coc.preferences.formatOnSaveFiletypes": [
     "css",
     "markdown",

@@ -17,11 +17,20 @@ autocmd BufWinEnter * if getcmdwintype() == '' | silent NERDTreeMirror | endif
 " Keep on the left
 let g:NERDTreeWinPos = "left"
 
-" Fix menu bug
-let g:NERDTreeMinimalMenu = 1
+" Use NerdFonts
+" let g:NERDTreeGitStatusUseNerdFonts = 1
+
+" Mark ignored files
+let g:NERDTreeGitStatusShowIgnored = 1
 
 " Always show hidden files
 let NERDTreeShowHidden = 1
+
+" But ignore certain filetypes
+let NERDTreeIgnore=['\.git$', '\.idea$', '\.vscode$', '\.history$']
+
+" Fix menu bug
+let g:NERDTreeMinimalMenu = 1
 
 " NERDTree maps
 map <C-n> :NERDTreeToggle<CR>

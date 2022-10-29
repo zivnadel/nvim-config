@@ -10,12 +10,30 @@ call plug#begin('~/.config/nvim/autoload/plugs')
   Plug 'morhetz/gruvbox'
   Plug 'arcticicestudio/nord-vim'
 
+  " VS Code like intellisense and language-servers
+  Plug 'neoclide/coc.nvim'
+
+   " NERDTree file explorer
+  Plug 'preservim/nerdtree'
+
+  " git icons in NERDTree
+  Plug 'Xuyuanp/nerdtree-git-plugin' |
+
+  " Dev Icons
+  Plug 'ryanoasis/vim-devicons'
+
+  " FUZZY FINDER file finder
+  Plug 'junegunn/fzf'
+
+  " git plugin
+  Plug 'tpope/vim-fugitive'
+
+  " for better syntax highlighting
+  Plug 'sheerun/vim-polyglot'
+
   " Airline (statusline)
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
-
-  " VS Code like intellisense and language-servers
-  Plug 'neoclide/coc.nvim'
 
   " Auto pairs
   Plug 'jiangmiao/auto-pairs'
@@ -23,23 +41,8 @@ call plug#begin('~/.config/nvim/autoload/plugs')
   " Commenting
   Plug 'tpope/vim-commentary'
 
-  " for better syntax highlighting
-  Plug 'sheerun/vim-polyglot'
-
-  " FUZZY FINDER file finder
-  Plug 'junegunn/fzf'
-
-  " NERDTree file explorer
-  Plug 'preservim/nerdtree'
-
-  " git icons in NERDTree
-  Plug 'Xuyuanp/nerdtree-git-plugin'
-
-  " Displays file's icons in NERDTree
-  Plug 'ryanoasis/vim-devicons'
-
-  " git plugin
-  Plug 'tpope/vim-fugitive'
+  " Moving lines
+  Plug 'tpope/vim-unimpaired'
 
   " indent line
   Plug 'Yggdroot/indentLine'
