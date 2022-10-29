@@ -1,0 +1,25 @@
+{
+  // Require .prettierrc
+  "prettier.requireConfig": true,
+
+  // eslint
+  "eslint.enable": true,
+  "eslint.autoFixOnSave": true,
+
+  // Run prettier (and others)
+  "coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "markdown",
+    "Markdown",
+    "json",
+    "jsonc",
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "cpp",
+    "c",
+    "python",
+    "rust"
+  ]
+}
