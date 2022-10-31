@@ -17,41 +17,35 @@ map <F7> gg=G<C-o><C-o>
 map <F8> :set autochdir! autochdir?<CR>
 
 " Beginning and end of line
-imap <C-a> <home>
+imap <C-h> <home>
 imap <C-e> <end>
-cmap <C-a> <home>
+cmap <C-h> <home>
 cmap <C-e> <end>
 
 " Control-S Save
 nmap <C-S> :w<cr>
 vmap <C-S> <esc>:w<cr>
-imap <C-S> <esc>:w<cr>
 " Save + back into insert
-" imap <C-S> <esc>:w<cr>a
+imap <C-S> <esc>:w<cr>a
 
 " Control-Q for closing tab, exit if last tab
 nmap <expr> <C-Q> len(getbufinfo({'buflisted':1})) == 1 ? ':q<cr>' : ':bp<cr>:bd #<cr>'
 vmap <expr> <C-Q> len(getbufinfo({'buflisted':1})) == 1 ? '<esc>:q<cr>' : '<esc>:bp<cr>:bd #<cr>'
 imap <expr> <C-Q> len(getbufinfo({'buflisted':1})) == 1 ? '<esc>:q<cr>' : '<esc>:bp<cr>:bd #<cr>'
-" force exit
 
-" Control-C Copy in visual mode
-vnoremap <C-C> y
-
-" Control-V Paste in insert and command mode
+" Control-V Paste in insert mode
 inoremap <C-V> <esc>pa
-cnoremap <C-V> <C-r>0
 
-" make delete truly delete and not copy
+" make delete truly delete and not yank
 nnoremap x "_x
 nnoremap d "_d
 nnoremap D "_D
 vnoremap d "_d
 
-" map the delete and copy to leader
-nnoremap <leader>d ""d
-nnoremap <leader>D ""D
-vnoremap <leader>d ""d
+" map the yank to leader
+nnoremap <leader>d d
+nnoremap <leader>D D
+vnoremap <leader>d d
 
 " select all Control-A
 nnoremap <C-A> ggVG
@@ -101,9 +95,6 @@ inoremap JK <esc>
 " quick edit init.vim
 nnoremap <silent>,init :tabe ~/.config/nvim/init.vim<cr>
 nnoremap <silent>,so :so ~/.config/nvim/init.vim<cr>:echo 'sourced'<cr>
-
-" shortcut for creating shebang
-inoremap ,she #!/data/data/com.termux/files/usr/bin/
 
 " buffers handling
 " show list of buffers
