@@ -23,7 +23,7 @@ require("nvim-tree").setup({
   },
   filters = {
     dotfiles = true,
-    exclude = { ".gitignore" },
+    exclude = { ".gitignore", ".env", ".env.local" },
   },
 })
 
@@ -32,4 +32,6 @@ EOF
 " Maps for nvim-tree
 
 map <C-n> :NvimTreeToggle<CR>
-nnoremap <leader>n :NvimTreeFocus<CR>
+nnoremap <leader>n :NvimTreeFocus<esc>
+inoremap <leader>n <esc>:NvimTreeFocus<esc>
+

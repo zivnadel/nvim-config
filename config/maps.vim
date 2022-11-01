@@ -123,3 +123,7 @@ nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
+" Map copilot completion to alt
+imap <silent><script><expr> \\ copilot#Accept("\<CR>")
+let g:copilot_no_tab_map = v:true
