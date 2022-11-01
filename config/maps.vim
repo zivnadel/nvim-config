@@ -99,12 +99,13 @@ nnoremap <silent>,so :so ~/.config/nvim/init.vim<cr>:echo 'sourced'<cr>
 " buffers handling
 " show list of buffers
 nnoremap <space>b :buffers<cr>
+
 " switching; H for prev buffer, L for next buffer
-nnoremap <silent>H :bp<cr>
+nnoremap <silent> H :bprev<cr>
 nnoremap <silent>L :bn<cr>
 
 " tab handling prev & next tab
-nnoremap zz gT
+nnoremap zz g
 nnoremap mm gt
 
 " moving lines up and down
@@ -113,6 +114,12 @@ nmap <A-Down> :m+<CR>
 imap <A-Up> <Esc>:m-2<CR>
 imap <A-Down> <Esc>:m+<CR>
 
-" moving blocks up and dows
+" moving blocks up and down
 vmap <A-Up> [egv
 vmap <A-Down> ]egv
+
+" Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>

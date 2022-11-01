@@ -8,44 +8,42 @@ call plug#begin('~/.config/nvim/autoload/plugs')
 
   " Themes
   Plug 'morhetz/gruvbox'
-  Plug 'arcticicestudio/nord-vim'
+  Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 
   " VS Code like intellisense and language-servers
   Plug 'neoclide/coc.nvim'
 
-   " NERDTree file explorer
-  Plug 'preservim/nerdtree'
+  " File explorer
+  Plug 'nvim-tree/nvim-web-devicons' " for file icons
+  Plug 'nvim-tree/nvim-tree.lua'
 
-  " git icons in NERDTree
-  Plug 'Xuyuanp/nerdtree-git-plugin' |
+  " Finder and search (fuzzy finder)
+  Plug 'nvim-lua/plenary.nvim'
+  Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
 
-  " Dev Icons
-  Plug 'ryanoasis/vim-devicons'
+  " statusline
+  Plug 'nvim-lualine/lualine.nvim'
 
-  " FUZZY FINDER file finder
-  Plug 'junegunn/fzf'
+  " bufferline
+  Plug 'akinsho/bufferline.nvim', { 'tag': 'v3.*' }
 
   " git plugin
   Plug 'tpope/vim-fugitive'
 
   " for better syntax highlighting
-  Plug 'sheerun/vim-polyglot'
-
-  " Airline (statusline)
-  Plug 'vim-airline/vim-airline'
-  Plug 'vim-airline/vim-airline-themes'
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
   " Auto pairs
   Plug 'jiangmiao/auto-pairs'
+
+  " Surround in parentheses, brackets, quotes, XML tags, and more
+  Plug 'tpope/vim-surround'
 
   " Commenting
   Plug 'tpope/vim-commentary'
 
   " Moving lines
   Plug 'tpope/vim-unimpaired'
-
-  " indent line
-  Plug 'Yggdroot/indentLine'
 
   " github copilot
   Plug 'github/copilot.vim'
@@ -57,5 +55,3 @@ autocmd VimEnter *
   \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
   \|   PlugInstall --sync | q
   \| endif
-
-

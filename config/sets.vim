@@ -14,6 +14,10 @@ set smarttab
 set autoindent
 set backspace=indent,eol,start
 
+set termguicolors
+
+set mousemoveevent
+
 " Make tilde of the end of buffer disappeared
 set fillchars=eob:\ ,vert:▎
 
